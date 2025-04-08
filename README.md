@@ -18,6 +18,7 @@ AWS Bedrock의 Claude 3.5 Sonnet 모델을 활용한 대본 분석 및 기승전
 - AWS 계정 (Bedrock 서비스 액세스 권한 필요)
 - AWS CLI 설정 및 프로필 구성
 - Claude 3.5 Sonnet 모델 사용 권한 (ap-northeast-2 리전)
+- Claude 3.7 Sonnet의 경우 버지니아 리전에서만 지원합니다. (us-east-1 리전)
 
 ### 설치 방법
 
@@ -39,12 +40,17 @@ pip install gradio boto3
 ```bash
 aws configure --profile sso
 ```
-
 아래 정보를 입력합니다:
 - AWS Access Key ID
 - AWS Secret Access Key
 - Default region name (ap-northeast-2 권장)
 - Default output format (json 권장)
+
+
+하지만 Access Key 또는 Secret 유출이 될 수 있어 직접적인 키를 넣고 실행하는 것이 아닌 sso login을 이용하여 하실 것을 강력히 권장합니다.
+```bash
+aws sso login
+```
 
 ## ⚠️ 중요 설정 사항
 
@@ -52,9 +58,9 @@ aws configure --profile sso
 
 애플리케이션이 제대로 작동하려면 다음 조건이 충족되어야 합니다:
 
-1. **AWS SSO 프로필 설정**: 코드에서 `profile_name='sso'`로 지정되어 있으므로, AWS CLI에서 이 이름의 프로필이 설정되어 있어야 합니다.
+1. **AWS SSO 프로필 설정**: 코드에서 `profile_name='sso'`로 지정되어 있으므로, AWS CLI에서 이 이름의 프로필이 설정되어 있어야 합니다. (필요시 직접 수정가능)
 
-2. **Claude 3.5 Sonnet 모델 액세스**: AWS 계정에서 "apac.anthropic.claude-3-5-sonnet-20241022-v2:0" 모델에 대한 액세스 권한이 필요합니다.
+2. **Claude 3.5 Sonnet 모델 액세스**: AWS 계정에서 "apac.anthropic.claude-3-5-sonnet-20241022-v2:0" 모델에 대한 액세스 권한이 필요합니다. (필요시 직접 수정 가능)
 
 3. **리전 확인**: `ap-northeast-2` (서울) 리전을 사용합니다. 다른 리전을 사용하려면 코드에서 변경해야 합니다.
 
