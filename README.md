@@ -14,7 +14,7 @@ AWS Bedrock의 Claude 3.5 Sonnet 모델을 활용한 대본 분석 및 기승전
 
 ### 필수 요구사항
 
-- Python 3.8 이상
+- Python 3.8 이상 (conda 3.12 환경에서 정상 작동확인)
 - AWS 계정 (Bedrock 서비스 액세스 권한 필요)
 - AWS CLI 설정 및 프로필 구성
 - Claude 3.5 Sonnet 모델 사용 권한 (ap-northeast-2 리전)
@@ -47,7 +47,8 @@ aws configure --profile sso
 - Default output format (json 권장)
 
 
-하지만 Access Key 또는 Secret 유출이 될 수 있어 직접적인 키를 넣고 실행하는 것이 아닌 sso login을 이용하여 하실 것을 강력히 권장합니다.
+하지만 Access Key 또는 Secret 유출이 될 수 있어 직접적인 키를 넣고 실행하는 것이 아닌 
+sso login을 이용하여 하실 것을 **강력히 권장합니다**.
 ```bash
 aws sso login
 ```
