@@ -13,11 +13,11 @@ AWS_PROFILE = os.getenv("AWS_PROFILE", "sso")  # 기본값 "sso"
 AWS_REGION = os.getenv("AWS_REGION", "ap-northeast-2")  # 기본값 "ap-northeast-2"
 MODEL_ID = os.getenv("MODEL_ID", "apac.anthropic.claude-3-5-sonnet-20241022-v2:0")  # 기본값 Claude 3.5 Sonnet
 
-session = boto3.Session(profile_name='sso')
+session = boto3.Session(profile_name=AWS_PROFILE)
 # Initialize AWS Bedrock client
 bedrock = session.client(
     service_name='bedrock-runtime',
-    region_name='ap-northeast-2'
+    region_name=AWS_REGION
 )
 
 def count_korean_chars(text):
@@ -30,7 +30,7 @@ def invoke_bedrock(prompt, max_retries=3):
     for attempt in range(max_retries):
         try:
             response = bedrock.invoke_model(
-                modelId="apac.anthropic.claude-3-5-sonnet-20241022-v2:0",
+                modelId=MODEL_ID,
                 body=json.dumps({
                     "anthropic_version": "bedrock-2023-05-31",
                     "max_tokens": 4096,
