@@ -23,6 +23,16 @@ An application for script analysis and story generation with a four-part narrati
 - Claude 3.5 Sonnet model access (ap-northeast-2 region)
 - Note: Claude 3.7 Sonnet is only supported in the Virginia region (us-east-1)
 
+## ⏱️ Performance Test Results
+
+Average processing times measured in actual test environments:
+
+* **Story Analysis**: ~20 seconds
+* **Story Feedback Integration**: ~20 seconds
+* **Story Generation** (2500 characters): ~200 seconds
+
+> Note: Processing times may vary depending on network conditions, AWS Bedrock service status, and input data complexity.
+
 ### Installation Steps
 
 1. Clone or download the repository
