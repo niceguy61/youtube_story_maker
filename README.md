@@ -1,3 +1,7 @@
+[![Korean](https://img.shields.io/badge/Language-Korean-blue.svg)](./README.md)
+[![English](https://img.shields.io/badge/Language-English-red.svg)](./README_EN.md)
+
+
 # 📚 대본 분석 및 스토리 생성기
 
 AWS Bedrock의 Claude 3.5 Sonnet 모델을 활용한 대본 분석 및 기승전결 구조의 스토리 생성 애플리케이션입니다.
@@ -65,11 +69,11 @@ aws sso login
 
 애플리케이션이 제대로 작동하려면 다음 조건이 충족되어야 합니다:
 
-1. **AWS SSO 프로필 설정**: 코드에서 `profile_name='sso'`로 지정되어 있으므로, AWS CLI에서 이 이름의 프로필이 설정되어 있어야 합니다. (필요시 직접 수정가능)
+1. **AWS SSO 프로필 설정**: 코드에서 `profile_name='sso'`로 지정되어 있으므로, AWS CLI에서 이 이름의 프로필이 설정되어 있어야 합니다. (.env AWS_PROFILE 수정가능)
 
-2. **Claude 3.5 Sonnet 모델 액세스**: AWS 계정에서 "apac.anthropic.claude-3-5-sonnet-20241022-v2:0" 모델에 대한 액세스 권한이 필요합니다. (필요시 직접 수정 가능)
+2. **Claude 3.5 Sonnet 모델 액세스**: AWS 계정에서 "apac.anthropic.claude-3-5-sonnet-20241022-v2:0" 모델에 대한 액세스 권한이 필요합니다. (.env MODEL_ID 수정 가능, 다른 모델로 변경할 경우 AWS Bedrock에서 FM Access 완료 후 해당 Model Id를 .env에서 수정해서 사용하면 됩니다.)
 
-3. **리전 확인**: `ap-northeast-2` (서울) 리전을 사용합니다. 다른 리전을 사용하려면 코드에서 변경해야 합니다.
+3. **리전 확인**: `ap-northeast-2` (서울) 리전을 사용합니다. (.env AWS_REGION에서 수정 가능)
 
 ### 모델 ID 변경 방법
 
@@ -77,7 +81,7 @@ aws sso login
 
 ```python
 response = bedrock.invoke_model(
-    modelId="apac.anthropic.claude-3-5-sonnet-20241022-v2:0",  # 이 부분을 변경
+    modelId=MODEL_ID,  # 이 부분을 변경
     body=json.dumps({
         "anthropic_version": "bedrock-2023-05-31",
         "max_tokens": 4096,
