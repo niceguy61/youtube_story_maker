@@ -129,10 +129,13 @@ Once the server starts, access it via `http://127.0.0.1:7860` or the URL display
 ![Script Analysis Screen](./images/demo1.png)
 
 ### Feedback Input Screen
-![Feedback Input Screen](./images/demo2.png)
+![Feedback Input Screen](./images/demo4.png)
+
+### Add Story Instructor
+![스토리 생성 화면](./images/demo5.png)
 
 ### Story Generation Screen
-![Story Generation Screen](./images/demo3.png)
+![Story Generation Screen](./images/demo6.png)
 
 ## ❗ Troubleshooting
 

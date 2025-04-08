@@ -133,10 +133,13 @@ python app.py
 ![대본 분석 화면](./images/demo1.png)
 
 ### 피드백 입력 화면
-![피드백 입력 화면](./images/demo2.png)
+![피드백 입력 화면](./images/demo4.png)
+
+### 추가 지시사항
+![스토리 생성 화면](./images/demo5.png)
 
 ### 스토리 생성 화면
-![스토리 생성 화면](./images/demo3.png)
+![스토리 생성 화면](./images/demo6.png)
 
 ## ❗ 문제 해결
 
