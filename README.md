@@ -32,8 +32,14 @@ cd [프로젝트 폴더]
 2. 필요한 패키지 설치
 
 ```bash
-pip install gradio boto3
+pip install -r requirements.txt
 ```
+
+3. 환경변수 설정
+```bash
+cp .env.example .env
+```
+
 
 3. AWS CLI 프로필 설정 (아직 설정하지 않은 경우)
 

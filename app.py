@@ -2,6 +2,16 @@ import gradio as gr
 import boto3
 import re
 import json
+import os
+from dotenv import load_dotenv
+
+# .env 파일 로드
+load_dotenv()
+
+# 환경 변수에서 AWS 설정 가져오기
+AWS_PROFILE = os.getenv("AWS_PROFILE", "sso")  # 기본값 "sso"
+AWS_REGION = os.getenv("AWS_REGION", "ap-northeast-2")  # 기본값 "ap-northeast-2"
+MODEL_ID = os.getenv("MODEL_ID", "apac.anthropic.claude-3-5-sonnet-20241022-v2:0")  # 기본값 Claude 3.5 Sonnet
 
 session = boto3.Session(profile_name='sso')
 # Initialize AWS Bedrock client
